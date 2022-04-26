@@ -36,17 +36,18 @@ app.use('/sort',sort)
 
 
 
-require('dotenv').config({path: '../.env'})
+require('dotenv').config()
 
-const Port = process.env.Port || 7080
 
 const connect = require('./configs/db')
 
-app.listen(Port,async()=>{
-    try{
-        await connect()
-        console.log(`connected at port ${Port}`);
-    }catch(e){
-        console.log(e);
-    }
-})
+const PORT = process.env.PORT || 2345;
+
+app.listen(PORT, async () => {
+  try {
+    await connect();
+    console.log(`listening on port ${PORT}`);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
