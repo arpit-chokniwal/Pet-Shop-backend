@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-require('dotenv').config({path: '../../.env'})
+require('dotenv').config()
 
 const connect = ( ) =>{
     return mongoose.connect(process.env.Mongo_Url)

@@ -36,7 +36,7 @@ app.use('/sort',sort)
 
 
 
-require('dotenv').config({ path: "../.env" })
+require('dotenv').config()
 
 const Port = process.env.Port || 7080
 
